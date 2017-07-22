@@ -30,7 +30,7 @@
           </ul>
           <transition-group name="scans" tag="ul">
               <!-- <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li> -->
-              <li v-for="scan in scans | filterBy q in 'content' | orderBy sortKey sortOrder | recordLength count">{{ scan.content }} - {{ count }}</li>
+              <li v-for="scan in scans"></li>
           </transition-group>
         </section>
       </div>
