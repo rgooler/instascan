@@ -1,10 +1,11 @@
 var app = new Vue({
   el: '#app',
   filters: {
-      countme(search) {
+      countme(search, scans) {
          console.log('COUNTME - start');
          console.log(search);
-         var total = this.scans.reduce(function(n, val) {
+         console.log(scans);
+         var total = scans.reduce(function(n, val) {
              return n + (val.content === search);
          }, 0);
       }
