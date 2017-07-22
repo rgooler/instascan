@@ -9,22 +9,22 @@ var app = new Vue({
   computed: {
     countedScans: function() {
       console.log('countedScans');
-      var result = [];
-      var used = [];
+      var tmp = {};
       for(var s in this.scans.sort()){
         var t = this.scans[s].content;
-        console.log(used.indexOf(t));
-        if(used.indexOf(t) == -1) {
-          used.unshift(t);
-          console.log(t);
-          var c = app.scans.reduce(function(n,v){return n + (v.content === t) }, 0); 
-          result.unshift({count: c, name: t});
-          console.log(result);
+        console.log(t);
+        var c = app.scans.reduce(function(n,v){return n + (v.content === t) }, 0); 
+        tmp[t] = c;
+        console.log(tmp);
         }
       }
-      console.log(result);
+      console.log('aaaa');
+      var result = [];
+      for(key, value in tmp){
+        result.unshift({content: key, count: value});
+      }
       console.log('end');
-      return result.sort();
+      return result;
     }
   },
   mounted: function () {
