@@ -5,14 +5,11 @@ body, html {
   height: 100%;
 }
 #app {
-  background: #9CBA7F;
+  background: #000000;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
   height: 100%;
-}
-.beep {
-  background: #ffff00;
 }
 .sidebar {
   background: #eceff1;
@@ -80,4 +77,10 @@ body, html {
   transform: rotateY(180deg);
   -webkit-transform:rotateY(180deg);
   -moz-transform:rotateY(180deg);
+}
+.preview-container-enter-active {
+  transition: background 3s;
+}
+.preview-container-enter {
+  background: yellow;
 }

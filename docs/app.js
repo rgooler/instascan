@@ -26,9 +26,8 @@ var app = new Vue({
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
     self.scanner.addListener('scan', function (content, image) {
       self.scans.unshift({ content: content.replace('https://www.therarebarrel.com/product/','') });
-      var audio = new Audio('beep.wav');
+      var audio = new Howl({ src: ['beep.webm']});
       audio.play();
-
     });
     Instascan.Camera.getCameras().then(function (cameras) {
       self.cameras = cameras;
