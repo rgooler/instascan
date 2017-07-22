@@ -5,7 +5,7 @@ body, html {
   height: 100%;
 }
 #app {
-  background: #263238;
+  background: #9CBA7F;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
@@ -74,4 +74,9 @@ body, html {
   display: flex;
   width: 100%;
   overflow: hidden;
+}
+.preview {
+  transform: rotateY(180deg);
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
 }
