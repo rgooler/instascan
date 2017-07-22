@@ -28,7 +28,7 @@
             <li class="empty">No scans yet</li>
           </ul>
           <transition-group name="scans" tag="ul">
-              <li v-for="scan in countedScans">{{ scan }}</li>
+              <li v-for="scan in countedScans" :key=scan.content>{{ scan.count }} - {{ scan.content }}</li>
           </transition-group>
         </section>
       </div>
@@ -36,6 +36,6 @@
         <video id="preview"></video>
       </div>
     </div>
-    <script type="text/javascript" src="app.js?cb=14"></script>
+    <script type="text/javascript" src="app.js?cb=15"></script>
   </body>
 </html>
