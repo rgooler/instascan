@@ -28,7 +28,7 @@
             <li class="empty">No scans yet</li>
           </ul>
           <transition-group name="scans" tag="ul">
-              <li v-for="scan in scans" :key=scan.content :title=scan.content>{{ scan.content }} - {{ scan.content | countme scan}}</li>
+              <li v-for="scan in scans" :key=scan.content :title=scan.content>{{ scan.content }} - {{ scan.content | countme scans}}</li>
           </transition-group>
         </section>
       </div>
