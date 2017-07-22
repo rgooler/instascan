@@ -13,7 +13,9 @@ var app = new Vue({
       var used = [];
       for(var s in this.scans.sort()){
         var t = this.scans[s].content;
+        console.log(used.indexOf(t));
         if(used.indexOf(t) == 0) {
+          used.unshift(t);
           console.log(t);
           var c = app.scans.reduce(function(n,v){return n + (v.content === t) }, 0); 
           result.unshift({count: c, name: t});
