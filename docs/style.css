@@ -11,6 +11,9 @@ body, html {
   justify-content: stretch;
   height: 100%;
 }
+.beep {
+  background: #ffff00;
+}
 .sidebar {
   background: #eceff1;
   min-width: 250px;

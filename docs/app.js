@@ -8,21 +8,16 @@ var app = new Vue({
   },
   computed: {
     countedScans: function() {
-      console.log('countedScans');
       var tmp = {};
       for(var s in this.scans.sort()){
         var t = this.scans[s].content;
-        console.log(t);
         var c = app.scans.reduce(function(n,v){return n + (v.content === t) }, 0); 
         tmp[t] = c;
-        console.log(tmp);
         }
-      console.log('aaaa');
       var result = [];
       for(key in tmp){
         result.unshift({content: key, count: tmp[key]});
       }
-      console.log('end');
       return result;
     }
   },
@@ -30,8 +25,10 @@ var app = new Vue({
     var self = this;
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
     self.scanner.addListener('scan', function (content, image) {
-      console.log(content);
       self.scans.unshift({ content: content.replace('https://www.therarebarrel.com/product/','') });
+      var audio = new Audio('beep.wav');
+      audio.play();
+
     });
     Instascan.Camera.getCameras().then(function (cameras) {
       self.cameras = cameras;
