@@ -10,15 +10,19 @@ var app = new Vue({
     countedScans: function() {
       console.log('countedScans');
       var result = [];
+      var used = [];
       for(var s in this.scans.sort()){
         var t = this.scans[s].content;
-        console.log(t);
-        result[t] = app.scans.reduce(function(n,v){return n + (v.content === t) }, 0); 
-        console.log(result);
+        if(used.indexOf(t) == 0) {
+          console.log(t);
+          var c = app.scans.reduce(function(n,v){return n + (v.content === t) }, 0); 
+          result.unshift({count: c, name: t});
+          console.log(result);
+        }
       }
       console.log(result);
       console.log('end');
-      return result;
+      return result.sort();
     }
   },
   mounted: function () {
