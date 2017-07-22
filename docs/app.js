@@ -17,7 +17,6 @@ var app = new Vue({
         tmp[t] = c;
         console.log(tmp);
         }
-      }
       console.log('aaaa');
       var result = [];
       for(key, value in tmp){
