@@ -1,8 +1,12 @@
 var app = new Vue({
   el: '#app',
   filters: {
-      recordLength(result, key) {
-         this.$set(key, result.length)
+      countme(search) {
+         console.log('COUNTME - start');
+         console.log(search);
+         var total = this.scans.reduce(function(n, val) {
+             return n + (val.content === search);
+         }, 0);
       }
   },
   data: {
