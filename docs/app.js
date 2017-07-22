@@ -1,15 +1,5 @@
 var app = new Vue({
   el: '#app',
-  filters: {
-      countme(search, scans) {
-         console.log('COUNTME - start');
-         console.log(search);
-         console.log(scans);
-         var total = scans.reduce(function(n, val) {
-             return n + (val.content === search);
-         }, 0);
-      }
-  },
   data: {
     scanner: null,
     activeCameraId: null,
@@ -25,7 +15,7 @@ var app = new Vue({
       }
       return result;
     }
-  }
+  },
   mounted: function () {
     var self = this;
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
