@@ -74,7 +74,6 @@ body, html {
   display: flex;
   width: 100%;
   overflow: hidden;
-  transform: rotateY(180deg);
-  -webkit-transform:rotateY(180deg);
-  -moz-transform:rotateY(180deg);
+  transform: scaleX(1) !important;
+  
 }
