@@ -16,6 +16,16 @@ var app = new Vue({
     cameras: [],
     scans: []
   },
+  computed: {
+    countedScans: function() {
+      var result = [];
+      for(var s in this.scans.sort()){
+        var t = this.scans[s].content
+        result[t] = app.scans.reduce(function(n,v){return n + (v.content === t) }, 0); 
+      }
+      return result;
+    }
+  }
   mounted: function () {
     var self = this;
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
