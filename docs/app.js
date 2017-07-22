@@ -19,8 +19,8 @@ var app = new Vue({
         }
       console.log('aaaa');
       var result = [];
-      for(key, value in tmp){
-        result.unshift({content: key, count: value});
+      for(key in tmp){
+        result.unshift({content: key, count: tmp[key]});
       }
       console.log('end');
       return result;
