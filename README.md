@@ -1,5 +1,5 @@
-# ![Instascan](https://raw.githubusercontent.com/schmich/instascan/master/assets/qr.png) Instascan
-Real-time webcam-driven HTML5 QR code scanner. [Try the live demo](https://schmich.github.io/instascan/).
+# ![Instascan](https://raw.githubusercontent.com/rgooler/instascan/master/assets/qr.png) Instascan
+Real-time webcam-driven HTML5 QR code scanner. [Try the live demo](https://rgooler.github.io/instascan/).
 
 ## Installing
 
@@ -19,7 +19,7 @@ Pending. [Drop a note](https://github.com/schmich/instascan/issues/31) if you ne
 
 ### Minified
 
-Copy `instascan.min.js` from the [releases](https://github.com/schmich/instascan/releases) page and load with:
+Copy `instascan.min.js` from the [releases](https://github.com/rgooler/instascan/releases) page and load with:
 
 ```html
 <script type="text/javascript" src="instascan.min.js"></script>
