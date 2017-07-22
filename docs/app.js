@@ -8,11 +8,16 @@ var app = new Vue({
   },
   computed: {
     countedScans: function() {
+      console.log('countedScans');
       var result = [];
       for(var s in this.scans.sort()){
-        var t = this.scans[s].content
+        var t = this.scans[s].content;
+        console.log(t);
         result[t] = app.scans.reduce(function(n,v){return n + (v.content === t) }, 0); 
+        console.log(result);
       }
+      console.log(result);
+      console.log('end');
       return result;
     }
   },
